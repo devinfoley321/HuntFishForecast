@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Southern Ohio Hunt & Fish Forecast</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🦌 Southern Ohio Hunt & Fish Forecast 🎣</h1>
+            <p class="subtitle">Smart predictions based on weather, barometric pressure, and solunar activity</p>
+        </header>
+
+        <div class="location-section">
+            <h2>Location</h2>
+            <div class="location-input">
+                <input type="text" id="locationInput" placeholder="Enter city (e.g., Cincinnati, Columbus)" value="Cincinnati">
+                <button id="updateLocation">Update Location</button>
+            </div>
+        </div>
+
+        <section class="current-conditions">
+            <h2>Current Conditions</h2>
+            <div id="loading" class="loading">Loading data...</div>
+            <div id="currentData" class="hidden">
+                <div class="score-display">
+                    <div class="score-circle">
+                        <div class="score-value" id="currentScore">--</div>
+                        <div class="score-label">Activity Score</div>
+                    </div>
+                    <div class="recommendation">
+                        <h3 id="recommendationTitle">--</h3>
+                        <p id="recommendationText">--</p>
+                    </div>
+                </div>
+                
+                <div class="conditions-grid">
+                    <div class="condition-card">
+                        <h4>🌡️ Weather</h4>
+                        <div class="condition-value" id="temperature">--</div>
+                        <div class="condition-detail" id="weatherDesc">--</div>
+                    </div>
+                    <div class="condition-card">
+                        <h4>🌡️ Pressure</h4>
+                        <div class="condition-value" id="pressure">--</div>
+                        <div class="condition-detail" id="pressureTrend">--</div>
+                    </div>
+                    <div class="condition-card">
+                        <h4>🌙 Moon Phase</h4>
+                        <div class="condition-value" id="moonPhase">--</div>
+                        <div class="condition-detail" id="moonIllumination">--</div>
+                    </div>
+                    <div class="condition-card">
+                        <h4>⏰ Solunar Periods</h4>
+                        <div class="solunar-times" id="solunarPeriods">--</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="forecast-section">
+            <h2>7-Day Forecast</h2>
+            <div id="forecastData" class="forecast-container hidden">
+                <!-- Forecast days will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <footer>
+            <p>Data combines weather conditions, barometric pressure trends, and solunar theory for optimal hunting and fishing predictions.</p>
+            <p class="disclaimer">Always check local regulations and safety conditions before outdoor activities.</p>
+        </footer>
+    </div>
+
+    <script src="solunar.js"></script>
+    <script src="weather.js"></script>
+    <script src="scoring.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
